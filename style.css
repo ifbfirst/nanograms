@@ -1,0 +1,241 @@
+:root {
+  --main-color:#daeefb;
+  --text-color: #403f3d;
+  --accent-color: #c0e5fc;
+  --accent2-color: #8cc9ef;
+  --light-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--main-color);
+  padding: 20px;
+  width: auto;
+  max-width: 1440px;
+  margin: auto;
+
+}
+.name-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:30px;
+  align-content: center;
+}
+.name-game {
+  color: var(--text-color);
+  font: 36px Inter, sans-serif;
+  font-weight: 600;
+  line-height: 125%;
+  text-align: center;
+}
+
+.game-wrapper {
+  padding: 10px 0px 10px 0px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: 18px Inter, sans-serif;
+  font-weight: 600;
+  line-height: 125%;
+}
+.sound-on{
+  background-image: url(soundon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin-top:15px;
+}
+.sound-off{
+  background-image: url(soundoff.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  margin-top:15px;
+}
+.menu-game {
+  padding:7px;
+  max-width: 600px;
+  background-color: var(--accent-color);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-top: 10px;
+  text-align: center;
+   color: var(--text-color);
+   display: flex;
+   align-items: center;
+}
+.menu-game p{
+  font: 14px Inter, sans-serif;
+  font-weight: 600;
+  line-height: 125%;
+  text-transform: uppercase;
+}
+.btn-menu {
+  padding: 5px;
+  margin: 8px 8px 8px 8px;
+  cursor: pointer;
+  font: 14px Inter, sans-serif;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--text-color);
+  background-color: var(--main-color);
+  border-radius: 5px;
+  border:0px;
+}
+.btn-menu:hover{
+  background-color: var(--light-color);
+  transition: 1s;
+
+}
+
+.btn-menu_active {
+  background-color: var(--light-color);
+}
+.timer {
+  margin-top: 20px;
+  font: 24px Inter, sans-serif;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--text-color);
+}
+
+.field {
+  max-width: 500px;
+  display: grid;
+  grid-column-start: var(--text-color);
+  background: var(--accent-color);
+}
+
+.field-cell {
+  background-color: var(--light-color);
+  cursor: pointer;
+  position: relative;
+  border: 1px solid var(--main-color);
+}
+.help-cell {
+  background: var(--main-color);
+ cursor:auto;
+  font: 14px Inter, sans-serif;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.help-cell_top {
+border-bottom: 2px solid var(--accent2-color);
+border-right: 2px solid var(--accent2-color);
+line-height: 160%;;
+}
+
+.help-cell_left {
+border-right: 2px solid var(--accent2-color);
+border-bottom: 2px solid var(--accent2-color);
+}
+.help-cell_left span{
+  padding-left:10px;
+  padding-right:10px;
+}
+.cell_middle_right{
+  border-right: 2px solid var(--accent2-color);
+}
+.cell_middle_bottom{
+  border-bottom: 2px solid var(--accent2-color);
+}
+
+.cross-cell::after {
+  content: "\2573";
+  margin-left: 5px;
+  color: var(--text-color);
+
+}
+
+.open-cell {
+  background-color: var(--text-color);
+}
+
+
+/*modal*/
+
+.modal {
+  display: none;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  padding: 50px;
+  color: var(--text-color);
+  font: 24px Inter, sans-serif;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  height: 300px;
+  z-index: 99999;
+}
+
+.modal-bg {
+  display: none;
+  content: "";
+  background: var(--text-color);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.close-modal{
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+table {
+  border:1px solid var(--text-color);
+}
+
+td{
+  border:1px solid var(--text-color);
+  padding: 15px;
+}
+
+@media screen and (max-width: 450px) {
+  .help-cell {
+    font: 12px Inter, sans-serif;
+    font-weight: 600;
+    line-height: 125%;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+.btn-menu{
+  font-size: 12px;
+  margin:4px;
+}
+
+.modal{
+  font-size:18px;
+  padding:35px;
+}
+}
